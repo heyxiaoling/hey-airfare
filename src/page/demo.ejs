@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <%= require('./template/publicMeta.html') %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+    <%= require('./template/publicHeader.html') %>
+    <div class="mg-content">
+        <!--[[ 列表项 .mg-txt-center 文字居中-->
+        <ul class="mg-table-view">
+            <li class="mg-table-view-cell mg-txt-center">
+                <div class="mg-strong">很遗憾产品预订失败！</div>
+                <span>请稍后再试，或致电 40066-40066</span>
+            </li>
+        </ul>
+        <!--]] 列表项-->
+        <ul class="mg-table-view mg-mt-15" id="main-content"></ul>
+        <!--[[ 列表项-->
+        <ul class="mg-table-view mg-mt-15">
+            <li class="mg-table-view-cell">
+                <a href="#notifications" class="mg-navigate-right">列表项1</a>
+            </li>
+            <li class="mg-table-view-cell">
+                <a href="#privacy" class="mg-navigate-right">默认列表项超出宽度，自动填充省略号，测试测试测试</a>
+            </li>
+            <li class="mg-table-view-cell">
+                <a href="#general">无需右侧箭头，去掉a标签中的.mg-navigate-right</a>
+            </li>
+        </ul>
+        <!--]] 列表项-->
+        <!--[[ 网格布局-->
+        <div class="mg-group-title">网格布局</div>
+        <div class="mg-clear" style="background-color: #FFF;display: block;">
+            <div class="mg-span-1" style="background-color: #bbb;">1</div>
+            <div class="mg-span-2" style="background-color: #999;">2</div>
+            <div class="mg-span-3" style="background-color: #bbb;">mg-span-3</div>
+            <div class="mg-span-6" style="background-color: #999;">mg-span-6</div>
+        </div>
+        <!--]] 网格布局-->
+        <!--[[ 表单-->
+        <div class="mg-group-title">表单</div>
+        <form class="mg-input-group">
+            <div class="mg-input-row">
+                <label>收件人</label>
+                <input type="text" placeholder="请输入真实姓名">
+            </div>
+            <div class="mg-input-row">
+                <label>手机号码</label>
+                <input type="tel" placeholder="请输入联系手机">
+            </div>
+
+            <div class="mg-input-row">
+                <div class="mg-navigate-right">
+                    <label>省/市</label>
+                    <input type="text" class="" placeholder="请选择地区">
+                </div>
+            </div>
+            <div class="mg-button-row">
+                <button type="button" onclick="return false;">确认</button>&nbsp;&nbsp;
+                <button type="button" onclick="return false;">取消</button>
+            </div>
+        </form>
+        <!--]] 表单-->
+    </div>
+    <!--[[ 底部nav-->
+    <nav class="mg-bar mg-bar-tab">
+        <a class="mg-tab-item mui-active" href="#">
+            A
+        </a>
+        <a class="mg-tab-item" href="#">
+            B
+        </a>
+        <a class="mg-tab-item" href="#">
+            C
+        </a>
+        <a class="mg-tab-item" href="#">
+            D
+        </a>
+    </nav>
+    <!--]] 底部nav-->
+</body>
+<!--[[ 列表模板-->
+<script id="list-template" type="text/html">
+    {{each list as item i}}
+        <li class="mg-table-view-cell">
+            <div class="mui-table">
+                <label for="">{{item.title}}</label>
+                <div>{{item.content}}</div>
+            </div>
+        </li>
+    {{/each}}
+</script>
+<!--列表模板 ]]-->
+</html>

@@ -1,0 +1,56 @@
+iframe {
+  border: 0;
+  right: 0;
+  left: 0;
+  -webkit-overflow-scrolling: touch;
+}
+.mg-content {
+  height: 100%;
+}
+
+.scroll {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.slider-item {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+  transition:-webkit-transform 200ms ease-out;
+  transform:translate(-100%, 0px) scale(1) translateZ(0px);
+  -webkit-transform:translate(-100%, 0px) scale(1) translateZ(0px);
+}
+.slider-item.active {
+  z-index: 0;
+  position: absolute;
+  transition: -webkit-transform 200ms ease-out;
+  transform: translate(0px, 0px) scale(1) translateZ(0px);
+  -webkit-transform: translate(0px, 0px) scale(1) translateZ(0px);
+}
+
+.app{position: absolute; right: 0px; left: 0px;top: 0px; bottom: 0px;-webkit-overflow-scrolling:touch;}
+.wrap{position: absolute; right: 0px; left: 0px;top: 0px; bottom: 0px;-webkit-overflow-scrolling:touch;}
+.page{width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+  transition:-webkit-transform 200ms ease-out;
+  transform:translate(-100%, 0px) scale(1) translateZ(0px);
+  -webkit-transform:translate(-100%, 0px) scale(1) translateZ(0px);
+}
+.page.active {
+  z-index: 0;
+  position: absolute;
+  transition: -webkit-transform 200ms ease-out;
+  transform: translate(0px, 0px) scale(1) translateZ(0px);
+  -webkit-transform: translate(0px, 0px) scale(1) translateZ(0px);
+}

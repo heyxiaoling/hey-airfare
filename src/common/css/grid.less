@@ -1,0 +1,40 @@
+/**
+ * 网格模型
+ */
+@grid-columns:              12; // 12分网格布局
+
+.calc-grid-span(@index, @type) when (@index > 0) {
+  .mg-span-@{index} {
+    width: percentage((@index / @grid-columns));
+  }
+}
+
+.loop-grid-span(@index, @type) when (@index >= 0) {
+  .calc-grid-span(@index, @type);
+  // next iteration
+  .loop-grid-span((@index - 1), @type);
+}
+
+.float-grid-span() {
+  .span(@index) { // initial
+    @item: ~".mg-span-@{index}";
+    .span((@index + 1), @item);
+  }
+  .span(@index, @list) when (@index =< @grid-columns) { // general
+    @item: ~".mg-span-@{index}";
+    .span((@index + 1), ~"@{list}, @{item}");
+  }
+  .span(@index, @list) when (@index > @grid-columns) { // terminal
+    @{list} {
+      float: left;
+    }
+  }
+  .span(1); // kickstart it
+}
+
+.make-span() {
+  .float-grid-span();
+  .loop-grid-span(@grid-columns, width);
+}
+
+.make-span();

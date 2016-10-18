@@ -1,0 +1,395 @@
+@import "variables";
+
+// 基础变量
+
+//[[主样式，统一浏览器默认样式，及简写样�
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent
+}
+body {
+  margin: 0px;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000;
+  background-color: #efeff4;
+  -webkit-overflow-scrolling: touch
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+}
+a {
+  text-decoration: none;
+  color: #007aff;
+}
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+  line-height: 21px;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  -webkit-user-select: text;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 3px;
+  outline: 0;
+  background-color: #fff;
+  -webkit-appearance: none;
+}
+input, select, textarea {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 17px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+.mg-fl {
+  float: left;
+}
+.mg-fr {
+  float: right;
+}
+.mg-mt-15 {
+  margin-top: 15px !important;
+}
+.mg-txt-center {
+  text-align: center !important;
+}
+.mg-strong {
+  font-weight: bold !important;
+}
+.mg-clear:after, .mg-clear:before {
+  display: table;
+  content: ' '
+}
+.mg-clear:after {
+  clear: both
+}
+//]]
+
+//[[头部样式
+.mg-bar-nav {
+  top: 0;
+  -webkit-box-shadow: 0 1px 6px #ccc;
+  box-shadow: 0 1px 6px #ccc;
+}
+.mg-bar {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  height: 44px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-bottom: 0;
+  background-color: #f7f7f7;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .85);
+  box-shadow: 0 0 1px rgba(0, 0, 0, .85);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.mg-bar-nav.mg-bar .iconfont {
+  margin-right: -10px;
+  margin-left: -10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.mg-bar .iconfont {
+  font-size: 24px;
+  position: relative;
+  z-index: 20;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: @color-mg;
+}
+//]] 头部样式
+
+//[[主体样式
+.mg-bar-nav~.mg-content {
+  padding-top: 44px;
+}
+.mg-bar-nav~.mg-content {
+  padding-bottom: 50px;
+}
+.mg-content {
+  background-color: #efeff4;
+  -webkit-overflow-scrolling: touch
+}
+.mg-content .mg-group-title {
+  margin: 15px 0 10px 15px;
+}
+//]]
+
+//[[底部样式
+.mg-bar-tab {
+  bottom: 0;
+  display: table;
+  width: 100%;
+  height: 50px;
+  padding: 0;
+  table-layout: fixed;
+  border-top: 0;
+  border-bottom: 0;
+  -webkit-touch-callout: none;
+}
+.mg-bar-tab .mg-tab-item {
+  display: table-cell;
+  overflow: hidden;
+  width: 1%;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #929292;
+}
+//[[底部样式
+
+//[[列表样式
+.mg-content>.mg-table-view:first-child {
+  margin-top: 15px;
+}
+.mg-table-view {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  background-color: #fff;
+}
+.mg-table-view-cell {
+  position: relative;
+  overflow: hidden;
+  padding: 11px 15px;
+  -webkit-touch-callout: none;
+}
+.mg-table-view-cell:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 15px;
+  height: 1px;
+  content: '';
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  background-color: #c8c7cc;
+}
+.mg-table-view-cell:last-child:after {
+  height: 0;
+}
+// TODO 暂定按钮className �mg-btn
+.mg-table-view-cell>a:not(.mg-btn) {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: -11px -15px;
+  padding: inherit;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: inherit;
+}
+.mg-table-view-cell>a:active {
+  background-color: #eee;
+}
+.mg-navigate-right:after {
+  font-family: "iconfont" !important;
+  font-size: 12px;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-decoration: none;
+  color: #bbb;
+  -webkit-font-smoothing: antialiased;
+  right: 15px;
+  content: '\e602';
+}
+.mg-table {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+//]]
+
+
+//[[遮罩
+.mask {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.4);
+}
+//]]
+
+//[[弹窗
+.dialog {
+}
+.dialog .dialog-mask {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(62, 62, 62, 0.8);
+}
+.dialog .dialog-msg {
+  width: 85%;
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  z-index: 5000;
+  overflow: hidden;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #fafafc;
+  text-align: center;
+  border-radius: 3px;
+}
+.dialog-msg .dialog-title {
+  padding: 1.2em 20px .5em;
+}
+.dialog-msg .dialog-title .dialog-title-content {
+  font-weight: 400;
+  font-size: 17px;
+}
+.dialog-msg .dialog-msg-content {
+  padding: 0 20px;
+  text-align: center;
+  font-size: 15px;
+  color: #888;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.dialog-msg .dialog-bottom {
+  margin-top: 20px;
+  position: relative;
+  line-height: 42px;
+  font-size: 17px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.dialog-bottom:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #d5d5d6;
+  color: #d5d5d6;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+}
+.dialog-msg .dialog-bottom span {
+  position: relative;
+}
+.dialog-bottom span {
+  display: block;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  color: #333;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+//]]
+
+//[[load
+.load {
+}
+.load .load-mask {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(62, 62, 62, 0.8);
+}
+.load .load-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1010;
+  top: 0;
+  left: 0;
+  right: 0px;
+  bottom: 0px;
+}
+.load .load-content .load-img {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  z-index: 1010;
+  top: 0;
+  left: 0;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+  background: url(../../skin/img/loading.gif) no-repeat;
+  background-size: 40px 40px;
+}
+//]]
+
+//[[loading相关样式
+.mg-loading {
+  width: 100%;
+  position: fixed;
+  top: 40%;
+  color: #333;
+  font-size: 15px;
+  opacity: 0.7;
+  z-index: 9999;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+}
+.mg-loading .container {
+  width: 80px;
+  margin: 0 auto;
+  background-color: #FFF;
+}
+.mg-loading i {
+  height: 80px;
+  display: block;
+  background: url("../img/loading.gif") no-repeat 10px 10px #FFF;
+}
+.mg-loading span {
+  width: 100%;
+  padding-bottom: 10px;
+  display: block;
+  text-align: center;
+}
+//]]
+
+/**
+ * 基础控件引入
+ */
+@import "grid";
+// 网格布局
+@import "iconfont";
+// 字体图标
+@import "mg-button";
+//按钮
+@import "inputgroup";
+// 表单组件

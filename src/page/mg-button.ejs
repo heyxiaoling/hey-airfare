@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>
+			<%= htmlWebpackPlugin.options.title %>
+		</title>
+		<%= require('./template/publicMeta.html') %>
+
+		<body>
+			<%= require('./template/publicHeader.html') %>
+			<div class="mg-content">
+				<div id="content-text" style="padding-top: 3em">Welcome mangocity,this is the test page! </div>
+				<p><span class="mg-btn">默认按钮</span></p>
+				<p><span class="mg-btn btn-block btn-radius-mgbg">block按钮</span></p>
+				<p><span class="mg-btn btn-xl btn-radius-mgbg">开始搜索</span></p>
+				<p><span class="mg-btn btn-radius-nobg">预订</span></p>
+				<p><span class="mg-btn btn-sm btn-radius-uncheck">北京</span></p>
+				<p><span class="mg-btn btn-xl btn-radius-green">知道了</span></p>
+				<p><span class="mg-btn btn-lg btn-angle-mgbg">支付</span></p>
+				<p><span class="mg-btn btn-md btn-angle-gray">确定</span></p>
+				<p><span class="mg-btn btn-md btn-angle-gray">重置</span></p>
+			</div>
+		</body>
+
+</html>

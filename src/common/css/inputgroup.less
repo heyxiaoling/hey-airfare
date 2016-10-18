@@ -1,0 +1,47 @@
+.mg-input-group {
+  position: relative;
+  padding: 0;
+  border: 0;
+  background-color: #fff;
+}
+.mg-input-group .mg-input-row {
+  height: 40px;
+}
+.mg-input-group .mg-input-row:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 15px;
+  height: 1px;
+  content: '';
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  background-color: #c8c7cc;
+}
+.mg-input-group .mg-button-row {
+  height: 45px;
+}
+.mg-button-row {
+  position: relative;
+  padding-top: 5px;
+  text-align: center;
+}
+.mg-input-row {
+  position: relative;
+  clear: left;
+  overflow: hidden;
+}
+.mg-input-row label {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  line-height: 1.1;
+  float: left;
+  width: 35%;
+  padding: 11px 15px;
+}
+.mg-input-row label~input, .mg-input-row label~select, .mg-input-row label~textarea {
+  float: right;
+  width: 65%;
+  margin-bottom: 0;
+  padding-left: 0;
+  border: 0;
+}
